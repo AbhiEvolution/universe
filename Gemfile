@@ -30,8 +30,17 @@ gem "jbuilder"
 #Bootstrap gem
 gem 'bootstrap', '~> 5.1.3'
 
+#devise gem for authentication
+gem 'devise'
+
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
+
+#for pagination
+gem 'kaminari'
+
+# For icons
+gem "font-awesome-rails"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

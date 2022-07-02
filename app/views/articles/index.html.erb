@@ -1,0 +1,10 @@
+<h1 class="text-center pt-5">Listing of all articles</h1>
+<div class="container d-flex justify-content-center my-5">
+  <%= paginate @articles, remote: true  %>
+</div>
+<% @articles.each do |article| %>
+  <%= render 'article', article: article %>
+<% end %>
+<div class="container d-flex justify-content-center my-5">
+  <%= paginate @articles, remote: true  %>
+</div>

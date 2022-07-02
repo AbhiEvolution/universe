@@ -15,8 +15,11 @@
  */
 
 @import "bootstrap";
+@import "font-awesome";
 body {
     background-color: rgb(192, 190, 190);
+    margin: 0;
+    padding: 0;
 }
 
 .page-link {

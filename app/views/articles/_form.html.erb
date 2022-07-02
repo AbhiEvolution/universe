@@ -1,0 +1,25 @@
+<%= render 'layouts/errors', object: @article %>
+<div class="container mt-5 shadow-lg p-3 mb-5 bg-info rounded">
+  <%= form_with model: @article do |form| %>
+    <div>
+      <%= form.label :title %><br>
+      <%= form.text_field :title,class: 'form-control shadow-lg ' %>
+    </div>
+    <br />
+    <div>
+      <%= form.label :Description %><br>
+      <%= form.text_area :description, class: 'form-control  shadow-lg  '%>
+    </div>
+    <div>
+      <%=form.hidden_field :user_id, value: current_user.id,  class: 'form-control'%>
+    </div>
+    <br />
+    <div>
+      <%= form.submit  class: 'btn btn-outline-light btn-lg text-dark'%>
+    </div>
+    <br />
+  <% end %>
+</div>
+<div class="container mt-5 text-center">
+  <%= link_to  "Return to Article listing", articles_path,class: 'btn btn-outline-light btn-lg text-dark'%>
+</div>

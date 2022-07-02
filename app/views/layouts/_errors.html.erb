@@ -1,0 +1,11 @@
+<div class="container">
+  <% if object.errors.any? %>
+    <div class="alert alert-warning alert-dismissible fade show", role="alert">
+      <h2>Enter valid value</h2>
+      <% object.errors.full_messages.each do |error_message| %>
+        <li><%= error_message %></li>
+      <% end %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center ">
+    <div class="col-md-8">
+      <div class="card text-center">
+        <div class="card-header">
+          by <em><%= link_to user.username, user, class:"text-decoration-none text-muted" %></em>
+        </div>
+        <div class="card-body">
+          <% if user.avatar.attached? %>
+            <%= link_to user do %>
+              <div class="shadow-lg p-3 mb-1 bg-muted ">
+                <%= image_tag user.avatar, class:'avatar' %>
+              </div>
+            <% end %>
+          <% end %>
+          <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
+          <span class="d-flex justify-content-center">
+            <%# unless params[:controller] == 'articles' && params[:action] == 'show' %>
+            <%= link_to 'View profile', user, class:"btn btn-outline-success mx-2" %>
+            <%# end %>
+            <% if current_user.id == user.id %>
+              <%= link_to 'Edit profile', edit_user_registration_path(user), class:"btn btn-outline-info mx-2" %>
+              <%= button_to "Delete", registration_path(user), data: { confirm: "Are you sure?" }, method: :delete, class: "form-control btn btn-outline-danger mx-2"%>
+            <%end%>
+          </span>
+        </div>
+        <div class="card-footer text-muted">
+          Joined <%=time_ago_in_words user.created_at %> ago,
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

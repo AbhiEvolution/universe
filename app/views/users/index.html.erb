@@ -1,0 +1,10 @@
+<h1 class="text-center pt-5">Bloggers's profile</h1>
+<div class="container d-flex justify-content-center my-5">
+  <%= paginate @users, remote: true  %>
+</div>
+<% @users.each do |user| %>
+  <%= render 'user', user: user %>
+<% end %>
+<div class="container d-flex justify-content-center my-5">
+  <%= paginate @users, remote: true  %>
+</div>
