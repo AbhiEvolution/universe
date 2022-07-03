@@ -10,21 +10,29 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
-          <%= link_to articles_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
-            <div class="fa fa-home"></div>
-            Article
-          <% end %>
-          <%= link_to new_article_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
-            <div class="fa fa-home"></div>
-            New Article
-          <% end %>
-          <%= link_to users_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
-            <div class="fa fa-home"></div>
-            User
-          <% end %>
-          <%= link_to categories_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
-            <div class="fa fa-home"></div>
-            category list
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="fa-brands fa-blogger"></div>
+              Blog
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to articles_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
+                <div class="fa-regular fa-newspaper"></div>
+                <b>Articles list</b>
+              <% end %>
+              <%= link_to categories_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
+                <div class="fa-solid fa-layer-group"></div>
+                <b>Categories list</b>
+              <% end %>
+              <%= link_to users_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
+                <div class="fa-solid fa-users"></div>
+                <b>Users list</b>
+              <% end %>
+            </ul>
+          </li>
+          <%= link_to messages_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
+            <div class="fa-solid fa-message"></div>
+            Message
           <% end %>
         </ul>
         <ul class="navbar-nav ms-auto">

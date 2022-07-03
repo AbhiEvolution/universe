@@ -15,7 +15,7 @@
  */
 
 @import "bootstrap";
-@import "font-awesome";
+@import "page";
 body {
     background-color: rgb(192, 190, 190);
     margin: 0;
@@ -26,4 +26,8 @@ body {
 .navbar-dark .navbar-text a:hover,
 .navbar-dark .navbar-text a:focus {
     color: black;
+}
+
+.bg-color {
+    background-color: rgb(192, 190, 190);
 }

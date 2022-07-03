@@ -1,0 +1,12 @@
+<%= render 'layouts/errors', object: @message %>
+<%= form_with model: @message do |form| %>
+  <div class="row">
+    <div class="col-md-10 binput-group">
+      <%= form.text_field :body,class:"form-control" %>
+    </div>
+    <%=form.hidden_field :user_id, value: current_user.id,  class: 'form-control'%>
+    <div class="col-md-2 mt-1">
+      <%= form.submit "send",class:'text-danger'%>
+    </div>
+  </div>
+<% end %>

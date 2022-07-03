@@ -6,7 +6,6 @@ class ArticlesController < ApplicationController
     @articles = Article.page params[:page]
     #@articles = Article.all
     @categories = Category.all
-
   end
 
   def show
@@ -41,14 +40,13 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     flash[:notice] = "Article deleted successfully!"
-
     redirect_to articles_path
   end
 
   private
 
   def article_params
-    params.require(:article).permit(:title, :description, category_ids: [] )
+    params.require(:article).permit(:title, :description, category_ids: [])
   end
 
   def set_article
@@ -56,7 +54,7 @@ class ArticlesController < ApplicationController
   end
 
   def set_user
-    if  (current_user.id != @article.user.id) && !current_user.admin?
+    if (current_user.id != @article.user.id) && !current_user.admin?
       flash[:alert] = "You are not able to perform this action."
       redirect_to articles_path
     end
