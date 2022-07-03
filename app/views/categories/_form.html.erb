@@ -1,0 +1,17 @@
+<%= render 'layouts/errors', object: @category%>
+<div class="container mt-5 shadow-lg p-3 mb-5 bg-info rounded">
+  <%= form_with model: @category do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name,class: 'form-control shadow-lg ' %>
+    </div>
+    <br />
+    <div>
+      <%= form.submit  class: 'btn btn-outline-light btn-lg text-dark'%>
+    </div>
+    <br />
+  <% end %>
+</div>
+<div class="container mt-5 text-center">
+  <%= link_to  "Return to Article listing", articles_path,class: 'btn btn-outline-light btn-lg text-dark'%>
+</div>

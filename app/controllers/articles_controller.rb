@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.page params[:page]
     #@articles = Article.all
+    @categories = Category.all
 
   end
 
@@ -47,7 +48,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, category_ids: [] )
   end
 
   def set_article

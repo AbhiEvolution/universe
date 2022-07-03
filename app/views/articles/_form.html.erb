@@ -3,13 +3,20 @@
   <%= form_with model: @article do |form| %>
     <div>
       <%= form.label :title %><br>
-      <%= form.text_field :title,class: 'form-control shadow-lg ' %>
+      <%= form.text_field :title,class: 'form-control shadow-lg' %>
     </div>
     <br />
     <div>
       <%= form.label :Description %><br>
-      <%= form.text_area :description, class: 'form-control  shadow-lg  '%>
+      <%= form.text_area :description, class: 'form-control  shadow-lg'%>
     </div>
+    <br/>
+    <div class="field">
+      <%= form.label :category %>
+      <%= form.collection_select(:category_ids, Category.all, :id, :name,
+      {prompt: 'Select the categories'},{multiple: true,  class:"form-select shadow-lg"})%>
+    </div>
+    <br />
     <div>
       <%=form.hidden_field :user_id, value: current_user.id,  class: 'form-control'%>
     </div>

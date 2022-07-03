@@ -1,0 +1,24 @@
+<div class="row d-flex justify-content-center mt-4">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title text-success text-center"><%= category.name %></h5>
+      </div>
+      <div class="card-body">
+        <p class="text-center"><%= pluralize(category.articles.count, "article") %></p>
+        <span class="d-flex justify-content-center">
+          <% unless params[:controller] == 'categories' && params[:action] == 'show' %>
+            <%= link_to 'View', category_path(category), class:"btn btn-outline-success mx-2" %>
+          <% end %>
+          <% if  current_user.admin? %>
+            <%= link_to 'Edit', edit_category_path(category), class:"btn btn-outline-info mx-2" %>
+          <% end %>
+        </span>
+      </div>
+      <div class="card-footer text-muted">
+        Created <%=time_ago_in_words category.created_at %> ago,
+        edited <%=time_ago_in_words category.updated_at %> ago
+      </div>
+    </div>
+  </div>
+</div>

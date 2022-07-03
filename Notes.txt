@@ -1,0 +1,17 @@
+user1 = User.first
+user1.articles.build(title: "Article", description: "Descriptions of the article")
+article = _
+article.save
+
+
+ActiveRecord::Migration.drop_table(:users) drop a table
+
+user.articles << article
+
+Article.update_all(user_id: User.first.id)
+
+params[:user][:username]
+
+ArticleCategory.all
+
+article = Article.new(title: "Article", description: "Descriptions of the article",user:User.last, category_ids: [1,2])

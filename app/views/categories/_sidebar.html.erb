@@ -1,0 +1,7 @@
+<div  class="col-md-4 col-sm-4 mt-1 text-center ">
+  <% @categories.each do |category| %>
+    <div class="fs-6">
+      <%= link_to category.name, category_path(category),class:'text-light text-decoration-none btn btn-info m-2' %>
+    </div>
+  <%end%>
+</div>
