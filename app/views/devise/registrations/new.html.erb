@@ -6,7 +6,7 @@
     <div class="card-body">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
-        <%= image_tag("homepage_image.jpg",class:"rounded mx-auto d-block avatar_show") %>
+        <%= image_tag("blog.jpg",class:"rounded mx-auto d-block avatar_show") %>
         <div class="field">
           <%= f.label :avatar %>
           <%= f.file_field :avatar,class:'form-control col-md-10' %>

@@ -1,5 +1,16 @@
-.image {
-    background-image: url('homepage_image.jpg');
+.blog-image {
+    background-image: url('blog.jpg');
+    height: 100%;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.message-image {
+    background-image: url('message.jpg');
     height: 100%;
     padding-top: 15rem;
     padding-bottom: 15rem;
