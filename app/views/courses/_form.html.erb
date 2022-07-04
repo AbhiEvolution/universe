@@ -1,0 +1,31 @@
+<%= render 'layouts/errors', object: @course %>
+<div class="container mt-5 shadow-lg p-3 mb-5 bg-info rounded">
+  <%= form_with model: @course do |form| %>
+    <div>
+      <%= form.label :short_name %><br>
+      <%= form.text_field :short_name,class: 'form-control shadow-lg' %>
+    </div>
+    <br />
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_area :name, class: 'form-control  shadow-lg'%>
+    </div>
+    <br/>
+    <div>
+      <%= form.label :Description %><br>
+      <%= form.text_area :description, class: 'form-control  shadow-lg'%>
+    </div>
+    <br/>
+    <div>
+      <%#=form.hidden_field :user_id, value: current_user.id,  class: 'form-control'%>
+    </div>
+    <br />
+    <div>
+      <%= form.submit  class: 'btn btn-outline-light btn-lg text-dark'%>
+    </div>
+    <br />
+  <% end %>
+</div>
+<div class="container mt-5 text-center">
+  <%= link_to  "Return to course listing", courses_path,class: 'btn btn-outline-light btn-lg text-dark'%>
+</div>

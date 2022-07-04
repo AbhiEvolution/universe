@@ -1,0 +1,21 @@
+<div class="col-md-6 m-3">
+  <%= link_to student_path(student),class:'text-decoration-none text-dark' do %>
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Student name : <%=student.username%></h5>
+        <h6 class="card-subtitle mb-2 text-info">Email id : <%=student.email%></h6>
+        <p class="card-text">Course Enrollments :
+          <% if student.courses.empty? %>
+            None 
+          <% else %>
+            <ul>
+              <% student.courses.each do |course|%>
+                <li><%= link_to course.name, course_path(course) %></li>
+              <%end%>
+            </ul>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  <%end%>
+</div>

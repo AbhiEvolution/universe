@@ -12,4 +12,6 @@ class User < ApplicationRecord
 
   #for messages
   has_many :messages, dependent: :destroy
+  has_many :student_courses, dependent: :destroy
+  has_many :courses, through: :student_courses, dependent: :destroy
 end

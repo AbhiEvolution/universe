@@ -1,0 +1,23 @@
+<div class="col-md-6 m-3">
+  <%= link_to course_path(course),class:'text-decoration-none text-dark' do %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Course code : <%=course.short_name%></h5>
+        <h6 class="card-subtitle mb-2 text-info">Course name : <%=course.name%></h6>
+        <p class="card-text">Description : <%=course.description%></p>
+        <span class="d-flex justify-content-center">
+          <% if !current_user.courses.include?(course)%>
+            <%= button_to 'Enroll', course_enroll_path(course_id: course.id), method: :post, class: 'btn btn-outline-primary card-link'%>
+          <% end %>
+          <a href="#" class="card-link"></a>
+        </span>
+      </div>
+      <% if current_user.admin%>
+        <span class="card-footer d-flex justify-content-center">
+          <%=link_to "Edit", edit_course_path( course), class:'btn btn-outline-warning mx-2'%>
+          <%= button_to 'Delete',  course_path(course),  method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-outline-danger" %>
+        </span>
+      <%end%>
+    </div>
+  <%end%>
+</div>

@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <%@courses.each do |course| %>
+      <%= render partial: 'courses/course', locals: {course: course} %>
+    <%end%>
+  </div>
+</div>
