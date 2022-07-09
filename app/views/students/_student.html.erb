@@ -10,7 +10,7 @@
           <% else %>
             <ul>
               <% student.courses.each do |course|%>
-                <li><%= link_to course.name, course_path(course) %></li>
+                <li class="list-group-item "><%= link_to course.name, course_path(course), class:'text-decoration-none' %></li>
               <%end%>
             </ul>
           <% end %>
