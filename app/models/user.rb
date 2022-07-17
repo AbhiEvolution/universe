@@ -14,4 +14,8 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :student_courses, dependent: :destroy
   has_many :courses, through: :student_courses, dependent: :destroy
+  
+  def self.all_except(user)
+    where.not(id: user)
+  end
 end

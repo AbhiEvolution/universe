@@ -6,7 +6,7 @@
         <h6 class="card-subtitle mb-2 text-info">Course name : <%=course.name%></h6>
         <p class="card-text">Description : <%=course.description%></p>
         <span class="d-flex justify-content-center">
-          <% if !current_user.courses.include?(course)%>
+          <% if !current_user.courses.include?(course) && !current_user.admin?%>
             <%= button_to 'Enroll', course_enroll_path(course_id: course.id), method: :post, class: 'btn btn-outline-primary card-link'%>
           <% end %>
           <a href="#" class="card-link"></a>

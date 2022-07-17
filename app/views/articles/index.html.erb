@@ -1,13 +1,21 @@
-<h1 class="text-center pt-5">Listing of all articles</h1>
-<div class="container d-flex justify-content-center my-5">
-  <%= paginate @articles, remote: true  %>
+<div class="bg-primary-gradient">
+  <h1 class="text-center py-4">Listing of all articles</h1>
 </div>
-<div class="container d-flex justify-content-center my-5">
-  <%= link_to 'New Article',new_article_path,class:'btn btn-success' %>
-</div>
-<% @articles.each do |article| %>
-  <%= render 'article', article: article %>
-<% end %>
-<div class="container d-flex justify-content-center my-5">
-  <%= paginate @articles, remote: true  %>
+<div class="row">
+  <div class="col-md-2 m-0">
+    <%= render 'categories/sidebar' %>
+  </div>
+  <div class="col-md-8">
+    <% @articles.each do |article| %>
+      <%= link_to article do %>
+        <%= render 'article', article: article %>
+      <%end%>
+    <% end %>
+    <div class="container d-flex justify-content-center my-5">
+      <%= paginate @articles, remote: true  %>
+    </div>
+  </div>
+    <div class="col-md-2 m-0">
+    <%= render 'users/sidebar' %>
+  </div>
 </div>

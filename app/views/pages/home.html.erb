@@ -1,21 +1,42 @@
 <div class="container blog-image mt-5">
   <div class="row">
-    <div class="d-flex justify-content-center ">
-      <h1 class="text-light">Universe Blog</h1>
-      </div>
-      <div class="d-flex justify-content-center ">
-         <%= link_to "Sign up!", new_user_registration_path, class:"btn btn-light" %>
+    <div class="d-flex justify-content-center my-2 ">
+      <%= link_to articles_path, class:"btn btn-light" do %>
+        <h1 class="text-dark">Universe Blog</h1>
+      <%end%>
     </div>
+    <% unless user_signed_in? %>
+      <div class="d-flex justify-content-center ">
+        <%= link_to "Sign up!", new_user_registration_path, class:"btn btn-dark" %>
+      </div>
+    <%end%>
   </div>
 </div>
-
 <div class="container message-image my-5">
   <div class="row">
-    <div class="d-flex justify-content-center ">
-      <h1 class="text-dark">Universe Message</h1>
-      </div>
-      <div class="d-flex justify-content-center ">
-         <%= link_to "Sign up!", new_user_registration_path, class:"btn btn-dark" %>
+    <div class="d-flex justify-content-center my-2">
+      <%= link_to messages_path, class:"btn btn-light" do %>
+        <h1 class="text-dark">Universe Message</h1>
+      <%end%>
     </div>
+    <% unless user_signed_in? %>
+      <div class="d-flex justify-content-center ">
+        <%= link_to "Sign up!", new_user_registration_path, class:"btn btn-dark" %>
+      </div>
+    <%end%>
+  </div>
+</div>
+<div class="container course-image my-5">
+  <div class="row">
+    <div class="d-flex justify-content-center my-2">
+      <%= link_to courses_path, class:"btn btn-light" do %>
+        <h1 class="text-dark">Universe Courses</h1>
+      <%end%>
+    </div>
+    <% unless user_signed_in? %>
+      <div class="d-flex justify-content-center ">
+        <%= link_to "Sign up!", new_user_registration_path, class:"btn btn-dark" %>
+      </div>
+    <%end%>
   </div>
 </div>

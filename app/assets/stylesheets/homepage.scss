@@ -20,6 +20,17 @@
     border-radius: 5px;
 }
 
+.course-image {
+    background-image: url('study.jpg');
+    height: 100%;
+    padding-top: 2rem;
+    padding-bottom: 15rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+}
+
 .avatar {
     width: 100%;
     height: 15rem;
@@ -30,4 +41,26 @@
     // width: 100%;
     height: 15rem;
     object-fit: contain;
+}
+
+h1 {
+    color: #0072b5!important;
+}
+
+.bg-primary-gradient {
+    background: linear-gradient(90.04deg, #abd7f4 0.03%, rgba(235, 247, 255, 0) 139%);
+}
+
+.bg-danger-gradient {
+    background: linear-gradient(90.04deg, #ebb5be 0.03%, rgba(235, 247, 255, 0) 139%);
+}
+
+.text-color-blue {
+    color: #0072b5!important;
+}
+
+.search-card-cover {
+    height: 100%;
+    max-width: 280px;
+    object-fit: cover;
 }

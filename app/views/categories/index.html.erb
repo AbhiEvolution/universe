@@ -1,15 +1,25 @@
-<div class="container mt-5">
-  <h1 class="text-center m-2">Categories list</h1>
-  <% if  current_user.admin? %>
-    <h5 class="text-center my-4"><%= link_to 'Add new category', new_category_path, class:'btn btn-success'%></h5>
-  <%end%>
-  <div class="container d-flex justify-content-center my-5">
-    <%= paginate @categories, remote: true  %>
+<div class="bg-primary-gradient">
+  <h1 class="text-center py-4">Categories list</h1>
+</div>
+<% if  current_user.admin? %>
+  <h5 class="text-center my-4"><%= link_to 'Add new category', new_category_path, class:'btn btn-success'%></h5>
+<%end%>
+<div class="row">
+  <div class="col-md-2 m-0">
+    <%= render 'categories/sidebar' %>
   </div>
-  <% @categories.each do |category| %>
-    <%= render partial: 'categories/category', locals: { category: category} %>
-  <% end %>
-  <div class="container d-flex justify-content-center my-5">
-    <%= paginate @categories, remote: true  %>
+  <div class="col-md-8">
+    <div class="container d-flex justify-content-center my-5">
+      <%= paginate @categories, remote: true  %>
+    </div>
+    <% @categories.each do |category| %>
+      <%= render partial: 'categories/category', locals: { category: category} %>
+    <% end %>
+    <div class="container d-flex justify-content-center my-5">
+      <%= paginate @categories, remote: true  %>
+    </div>
+  </div>
+  <div class="col-md-2 m-0">
+    <%= render 'users/sidebar' %>
   </div>
 </div>

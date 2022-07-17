@@ -1,76 +1,25 @@
-<div class="container-fluid p-0">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div style="margin-bottom:4rem;">
+</div>
+<div class="container-fluid p-0  fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">
+      <%= link_to root_path,class:"navbar-brand btn btn-outline-primary rounded-pill bg-primary-gradient text-color-blue" do%>
         <i class="fas fa-globe-asia"></i>
         ᴜɴɪᴠᴇʀsᴇ
-      </a>
+      <% end%>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <div class="fa-brands fa-blogger"></div>
-              Blog
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to articles_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-                <div class="fa-regular fa-newspaper"></div>
-                <b>Articles list</b>
-              <% end %>
-              <%= link_to categories_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-                <div class="fa-solid fa-layer-group"></div>
-                <b>Categories list</b>
-              <% end %>
-              <%= link_to users_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-                <div class="fa-solid fa-users"></div>
-                <b>Users list</b>
-              <% end %>
-              <% if current_user %>
-                <%= link_to user_path(current_user), class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-                  <div class="fa-solid fa-users"></div>
-                  <b>View your profile</b>
-                <% end %>
-              <%end%>
-            </ul>
-          </li>
-          <%= link_to messages_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
-            <div class="fa-solid fa-message"></div>
-            Message
-          <% end %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <div class="fa-brands fa-blogger"></div>
-              Universe Tech
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to courses_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-                <div class="fa-duotone fa-book-open-cover"></div>
-                <b>Course list</b>
-              <% end %>
-              <%= link_to students_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-                <div class="fa-solid fa-layer-group"></div>
-                <b>Students list</b>
-              <% end %>
-              <%= link_to teacher_info_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-                <div class="fa-solid fa-users"></div>
-                <b>Teacher list</b>
-              <% end %>
-              <% if current_user %>
-                <%= link_to student_path(current_user), class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-                  <div class="fa-solid fa-users"></div>
-                  <b>View your profile</b>
-                <% end %>
-              <%end%>
-            </ul>
-          </li>
+          <%= render 'shared/article_navbar'%>
+          <%= render 'shared/messages_nav'%>
+          <%= render 'shared/courses_navbar' %>
         </ul>
         <ul class="navbar-nav ms-auto">
           <% if current_user %>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle btn btn-outline-primary rounded-pill bg-primary-gradient text-color-blue" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="fa fa-user"></div>
                 <%= "(Admin)" if current_user.admin? %>  <b><%= current_user.email %></b>
               </a>
@@ -79,7 +28,10 @@
                   <div class="fa fa-cog"></div>
                   <b>Account settings</b>
                 <% end %>
-                <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo: false }, class: "dropdown-item fa fa-sign-out-alt fw-bold" %>
+                <%= button_to destroy_user_session_path, method: :delete, data: { turbo: false }, class: "dropdown-item" do%>
+                  <i class="fa fa-sign-out-alt fw-bold"></i>
+                  <b>Sign out</b>
+                <%end%>
               </ul>
             </li>
           <% else %>

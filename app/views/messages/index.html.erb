@@ -18,14 +18,17 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 col-sm-4 w-sm-100 bg-color text-center">
-      <div class="card bg-color">
+    <div class="col-md-3 col-sm-4 w-sm-100 text-center">
+      <div class="card">
+       <p class="fs-4 fw-bold btn btn-danger"><i class="fa-solid fa-users"></i> User List</p>
         <div class="card-body">
           <% @users.each do |user| %>
-            <div class="border my-1 py-1""><span class="btn btn-danger "><i class="fa fa-user"></i> <%= user.username %></span></div>
+            <div class="border py-1"><span class="btn btn-outline-danger rounded-pill bg-danger-gradient text-dark mt-1"><i class="fa fa-user"></i> <%= user.username %></span></div>
           <%end%>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+

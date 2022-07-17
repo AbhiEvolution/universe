@@ -2,7 +2,13 @@
   <%= link_to student_path(student),class:'text-decoration-none text-dark' do %>
     <div class="card text-center">
       <div class="card-body">
-        <h5 class="card-title">Student name : <%=student.username%></h5>
+        <h5 class="card-title">
+          <% if student.admin?%>
+            Teacher name : 
+          <% else %>
+            Student name :
+          <%end%>
+          <%=student.username%></h5>
         <h6 class="card-subtitle mb-2 text-info">Email id : <%=student.email%></h6>
         <p class="card-text">Course Enrollments :
           <% if student.courses.empty? %>

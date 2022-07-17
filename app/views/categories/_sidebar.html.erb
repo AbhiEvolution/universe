@@ -1,7 +1,13 @@
-<div  class="col-md-4 col-sm-4 mt-1 text-center ">
+<div  class="text-center bg-primary-gradient mt-5">
+  <div class="border py-5">
+    <h3 class="fa-solid fa-layer-group text-color-blue"></h3>
+    <h3 class="text-color-blue d-inline">List of category</h3>
+  </div>
   <% @categories.each do |category| %>
-    <div class="fs-6">
-      <%= link_to category.name, category_path(category),class:'text-light text-decoration-none btn btn-info m-2' %>
-    </div>
+    <%= link_to category,class:'text-decoration-none'  do%>
+      <div class="fs-5 border py-5">
+        <%= category.name%>
+      </div>
+    <%end%>
   <%end%>
 </div>

@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
     @articles = Article.page params[:page]
     #@articles = Article.all
     @categories = Category.all
+    @users_all = User.all_except(current_user)
   end
 
   def show

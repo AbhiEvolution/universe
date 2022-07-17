@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.page params[:page]
+    @users_all = User.all
   end
 
   def new

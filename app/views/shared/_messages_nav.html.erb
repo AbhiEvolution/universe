@@ -1,0 +1,6 @@
+<% if params[:controller] == 'messages'%>
+  <%= link_to messages_path, class: "nav-link #{'btn btn-outline-primary rounded-pill bg-primary-gradient text-color-blue' if current_page?(messages_path)}" do %>
+    <div class="fa-solid fa-message"></div>
+    Message
+  <%end%>
+<%end%>

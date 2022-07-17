@@ -1,0 +1,19 @@
+<% if params[:controller] == 'articles' || params[:controller] == 'categories' || params[:controller] == 'users'%>
+  <%= link_to articles_path, class: "nav-link mx-2 text-color-blue #{'btn btn-outline-primary rounded-pill bg-primary-gradient' if current_page?(articles_path)}" do %>
+    <div class="fa-brands fa-blogger"></div>
+    Blog list
+  <%end%>
+  <%= link_to new_article_path, class: "nav-link text-color-blue #{'btn btn-outline-primary rounded-pill bg-primary-gradient' if current_page?(new_article_path)}" do %>
+    <div class="fa-solid fa-square-plus"></div>
+    New blog
+  <%end%>
+  <%= link_to categories_path, class: "nav-link text-color-blue #{'btn btn-outline-primary rounded-pill bg-primary-gradient' if current_page?(categories_path)}" do %>
+    <div class="fa-solid fa-layer-group"></div>
+    Categories list
+  <%end%>
+  <%= link_to users_path, class: "nav-link text-color-blue #{'btn btn-outline-primary rounded-pill bg-primary-gradient' if current_page?(users_path)}" do %>
+    <div class="fa-solid fa-users"></div>
+    Users list
+  <%end%>
+<%end%>
+

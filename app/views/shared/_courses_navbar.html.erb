@@ -1,0 +1,20 @@
+<% if params[:controller] == 'courses' || params[:controller] == 'students' %>
+  <%= link_to courses_path, class: "nav-link text-color-blue #{'btn btn-outline-primary rounded-pill bg-primary-gradient ' if current_page?(courses_path)}" do %>
+    <div class="fa-solid fa-book-open"></div>
+    Course list
+  <%end%>
+  <%= link_to students_path, class: "nav-link text-color-blue #{'btn btn-outline-primary rounded-pill bg-primary-gradient ' if current_page?(students_path)}" do %>
+    <div class="fa-solid fa-user-graduate""></div>
+    Students list
+  <%end%>
+  <%= link_to teacher_info_path, class: "nav-link  text-color-blue #{'btn btn-outline-primary rounded-pill bg-primary-gradient' if current_page?(teacher_info_path)}" do %>
+    <div class="fa-solid fa-graduation-cap"></div>
+    Teacher list
+  <%end%>
+  <% if current_user %>
+    <%= link_to student_path(current_user), class: "nav-link  text-color-blue #{'btn btn-outline-primary rounded-pill bg-primary-gradient' if current_page?(student_path(current_user))}" do %>
+      <div class="fa-solid fa-user"></div>
+      View your profile
+    <% end %>
+  <%end%>
+<%end%>

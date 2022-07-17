@@ -1,7 +1,12 @@
+<div class="bg-primary-gradient">
+  <h1 class="text-center py-4">Listing of all student</h1>
+</div>
 <div class="container">
   <div class="row d-flex justify-content-center">
     <%@students.each do |student| %>
-      <%= render partial: 'students/student', locals: {student: student} %>
+      <% if !student.admin?%>
+        <%= render partial: 'students/student', locals: {student: student} %>
+      <%end%>
     <%end%>
   </div>
 </div>

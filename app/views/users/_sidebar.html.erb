@@ -1,0 +1,19 @@
+<div  class="text-center bg-primary-gradient mt-5">
+  <div class="border py-5">
+    <h3 class="fa-solid fa-users text-color-blue"></h3>
+    <h3 class="text-color-blue d-inline">List of Users</h3>
+  </div>
+  <%= link_to current_user,class:'text-decoration-none'  do%>
+    <div class="fs-5 border py-5">
+      <i class="fa fa-user"></i>
+      <%= current_user.username%>
+    </div>
+  <%end%>
+  <% @users_all.each do |user| %>
+    <%= link_to user,class:'text-decoration-none'  do%>
+      <div class="fs-5 border py-5">
+        <%= user.username%>
+      </div>
+    <%end%>
+  <%end%>
+</div>
